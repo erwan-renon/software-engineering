@@ -1,0 +1,12 @@
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
