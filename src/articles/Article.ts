@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 export type Article = {
-  id: "accessibility-in-tests";
+  id: string;
   title: string;
   body: () => ReactNode;
   preview: string;

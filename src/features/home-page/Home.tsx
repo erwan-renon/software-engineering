@@ -3,11 +3,10 @@ import { HomeArticle } from "features/home-page/articles/HomeArticle";
 
 export const Home = () => {
   return (
-    <div>
-      <h1>Erwan Renon Software Engineering</h1>
-      {Articles.map((article) => {
+    <ul className="cardList">
+      {Articles.toReversed().map((article) => {
         return <HomeArticle article={article} />;
       })}
-    </div>
+    </ul>
   );
 };
