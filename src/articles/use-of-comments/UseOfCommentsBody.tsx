@@ -1,7 +1,7 @@
 export const UseOfCommentsBody = () => {
   return (
     <>
-      <h3>Introduction</h3>
+      <h2>Introduction</h2>
       <p>
         I started thinking about this as I suddenly saw an increase in the
         amount of comments and documentation in PRs.

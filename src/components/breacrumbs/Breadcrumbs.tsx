@@ -11,19 +11,21 @@ export type BreadcrumbsProps = {
 
 export const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => {
   return (
-    <ul className="breadcrumbs">
-      {breadcrumbs.map((breadcrumb, index) => {
-        return (
-          <li className="breadcrumb">
-            {index > 0 ? <p aria-hidden={true}>/</p> : null}
-            {breadcrumb.location ? (
-              <a href={breadcrumb.location}>{breadcrumb.name}</a>
-            ) : (
-              <p>{breadcrumb.name}</p>
-            )}
-          </li>
-        );
-      })}
-    </ul>
+    <nav aria-label="breadcrumbs">
+      <ul className="breadcrumbs">
+        {breadcrumbs.map((breadcrumb, index) => {
+          return (
+            <li className="breadcrumb">
+              {index > 0 ? <p aria-hidden={true}>/</p> : null}
+              {breadcrumb.location ? (
+                <a href={breadcrumb.location}>{breadcrumb.name}</a>
+              ) : (
+                <p>{breadcrumb.name}</p>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 };
