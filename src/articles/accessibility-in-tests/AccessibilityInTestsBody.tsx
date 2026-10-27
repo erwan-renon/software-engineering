@@ -1,7 +1,7 @@
 export const AccessibilityInTestsBody = () => {
   return (
     <>
-      <h3>Introduction</h3>
+      <h2>Introduction</h2>
       <p>
         When writing automated tests, it is important to think about the "what"
         but also the "how". Automated tests should be as close to user behaviour

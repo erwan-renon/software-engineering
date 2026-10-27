@@ -1,3 +1,7 @@
 export const Header = () => {
-  return <h1>Erwan Renon Software Engineering</h1>;
+  return (
+    <header>
+      <p>Erwan Renon Software Engineering</p>
+    </header>
+  );
 };

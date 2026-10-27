@@ -1,15 +1,9 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --text-small: #190000;
+  --text-large: #330000;
+  --background: #fff9f5;
+  --accent: #78310d;
+  --code-background: #feffa3;
 
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
@@ -18,8 +12,6 @@
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -30,19 +22,40 @@
   }
 }
 
+.themeWrapper {
+  max-width: 100%;
+  min-height: 100svh;
+}
+
+.autumnTheme {
+  --text-small: #310000;
+  --text-large: #4e0000;
+  --background: #fff9f5;
+  --accent: #800020;
+  --code-background: #feffa3;
+
+  color: var(--text-small);
+  background: var(--background);
+}
+
+.springTheme {
+  --text-small: #7528c3;
+  --text-large: #954ddb;
+  --background: #fafffa;
+  --accent: #006b12;
+  --code-background: #feffa3;
+
+  color: var(--text-small);
+  background: var(--background);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --text-small: #9ca3af;
+    --text-large: #f3f4f6;
+    --background: #16171d;
+    --accent: #2e303a;
+    --code-background: #1f2028;
   }
 }
 
@@ -51,7 +64,6 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  padding: 24px;
 }
 
 body {
@@ -62,7 +74,7 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--text-large);
 }
 
 h1 {
@@ -87,6 +99,19 @@ p {
   margin: 0;
 }
 
+a {
+  color: var(--accent);
+}
+
+a:hover,
+a:focus {
+  background-color: var(--code-background);
+  border-style: solid;
+  border-color: var(--accent);
+  border-width: 2px;
+  margin: -2px;
+}
+
 code,
 .counter {
   font-family: var(--mono);
@@ -99,7 +124,7 @@ code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
-  background: var(--code-bg);
+  background: var(--code-background);
 }
 
 ul {

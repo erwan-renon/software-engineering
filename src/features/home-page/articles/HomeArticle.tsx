@@ -7,10 +7,9 @@ type HomeArticleProps = {
 export const HomeArticle = ({ article }: HomeArticleProps) => {
   return (
     <li className="card">
-      <a href={article.id}>
-        <h2>{article.title}</h2>
-      </a>
-
+      <h2>
+        <a href={article.id}>{article.title}</a>
+      </h2>
       <p>{article.preview}</p>
     </li>
   );
