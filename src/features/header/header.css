@@ -1,0 +1,36 @@
+.appHeader {
+  background-color: var(--accent);
+  color: var(--background);
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.appHeaderLink {
+  color: var(--background);
+  padding: 8px;
+}
+
+.appHeaderLink:hover,
+.appHeaderLink:focus {
+  color: var(--text-small);
+}
+
+.appHeaderLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.appHeaderSelectedLink {
+  margin: -2px;
+  border-width: 2px;
+  border-color: var(--emphasis-background);
+  border-style: solid;
+}

@@ -1,16 +1,24 @@
-import type { Article } from "articles/Article";
+import { ArticleById } from "articles/Articles";
 import { Breadcrumbs } from "components/breacrumbs/Breadcrumbs";
 import { MainPage } from "components/main-page/MainPage";
+import { useParams } from "react-router-dom";
 
-type ArticlePage = {
-  article: Article;
-};
+export const ArticlePage = () => {
+  const { articleId } = useParams();
 
-export const ArticlePage = ({ article }: ArticlePage) => {
+  if (!articleId) {
+    return <></>;
+  }
+
+  const article = ArticleById[articleId];
+
   return (
     <MainPage>
       <Breadcrumbs
-        breadcrumbs={[{ name: "Home", location: "/" }, { name: article.title }]}
+        breadcrumbs={[
+          { name: "Home", location: "/articles" },
+          { name: article.title },
+        ]}
       />
       <h1>{article.title}</h1>
       <div>{article.body()}</div>
