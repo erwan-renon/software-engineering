@@ -8,7 +8,7 @@ export const HomeArticle = ({ article }: HomeArticleProps) => {
   return (
     <li className="card">
       <h2>
-        <a href={article.id}>{article.title}</a>
+        <a href={`/articles/${article.id}`}>{article.title}</a>
       </h2>
       <p>{article.preview}</p>
     </li>
