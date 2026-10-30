@@ -36,7 +36,7 @@
 .springTheme {
   --text-small: #330f58;
   --text-large: #6b27af;
-  --background: #eafaea;
+  --background: #fbfdf0;
   --accent: #0e4417;
   --emphasis-background: #7cca6e;
   --code-background: #feffa3;
@@ -131,6 +131,56 @@ ul {
   padding-inline-start: 0;
 }
 
+button {
+  background-color: var(--accent);
+  color: var(--background);
+  padding: 8px;
+  font-size: 18px;
+  min-height: 24px;
+  border-style: none;
+  outline: none;
+}
+
+button:hover,
+button:focus {
+  outline: var(--accent);
+  outline-width: 3px;
+  outline-offset: 3px;
+  outline-style: solid;
+}
+
+@keyframes button-press {
+  to {
+    outline-width: 6px;
+    outline-offset: 0px;
+    background-color: var(--emphasis-background);
+    color: var(--accent);
+  }
+}
+
+button:active {
+  animation: button-press 100ms ease-out forwards;
+  border-radius: 4px;
+}
+
+fieldset {
+  padding-block: 0;
+  padding-inline: 0;
+  margin-inline: 0;
+  border-color: var(--accent);
+  border-style: solid;
+  display: flex;
+  padding: 8px;
+}
+
+legend {
+  color: var(--text-small);
+}
+
+input[type="radio"] {
+  accent-color: var(--accent);
+}
+
 .cardList {
   display: flex;
   flex-direction: column;
@@ -144,10 +194,10 @@ ul {
   padding: 8px;
   border-color: var(--background);
   border-radius: 32px;
-  animation: fade-in-up 3000ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: card-fade-in 3000ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-@keyframes fade-in-up {
+@keyframes card-fade-in {
   to {
     border-color: var(--accent);
     border-radius: 8px;
@@ -160,4 +210,22 @@ ul {
     border-color: var(--accent);
     border-radius: 8px;
   }
+}
+
+.radioButtonsGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formButton {
+  margin-top: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
