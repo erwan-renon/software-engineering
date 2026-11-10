@@ -11,23 +11,31 @@ import { Header } from "features/header/Header";
 import { Settings } from "features/settings/Settings";
 import { AppTitle } from "components/AppTitle";
 import { useEffect, useState } from "react";
-import { ThemeContext } from "common/contexts/ThemeContext";
-import { Themes, type ThemeValues } from "constants/Themes";
+import type { Settings as SettingsType } from "features/settings/types/Settings";
+import {
+  defaultSettings,
+  SettingsContext,
+} from "common/contexts/SettingsContext";
+import { getThemeClass } from "common/utils/getThemeClass";
 
 const App = () => {
-  const [theme, setTheme] = useState<ThemeValues>(
-    (localStorage.getItem(
-      "erwanRenonSoftwareEngineering.settings.theme",
-    ) as ThemeValues | null) || Themes.AUTUMN,
+  const [settings, setSettings] = useState<SettingsType>(
+    JSON.parse(
+      localStorage.getItem("erwanRenonSoftwareEngineering.settings") ||
+        JSON.stringify(defaultSettings),
+    ) as SettingsType,
   );
 
   useEffect(() => {
-    localStorage.setItem("erwanRenonSoftwareEngineering.settings.theme", theme);
-  }, [theme]);
+    localStorage.setItem(
+      "erwanRenonSoftwareEngineering.settings",
+      JSON.stringify(settings),
+    );
+  }, [settings]);
 
   return (
-    <div className={`${theme} themeWrapper`}>
-      <ThemeContext value={{ theme, setTheme }}>
+    <div className={`${getThemeClass(settings)} themeWrapper`}>
+      <SettingsContext value={{ settings, setSettings }}>
         <BrowserRouter>
           <Routes>
             <Route
@@ -47,7 +55,7 @@ const App = () => {
             </Route>
           </Routes>
         </BrowserRouter>
-      </ThemeContext>
+      </SettingsContext>
     </div>
   );
 };
