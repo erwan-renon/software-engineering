@@ -17,6 +17,7 @@ import {
   SettingsContext,
 } from "common/contexts/SettingsContext";
 import { getThemeClass } from "common/utils/getThemeClass";
+import { SkipLink } from "components/SkipLink";
 
 const App = () => {
   const [settings, setSettings] = useState<SettingsType>(
@@ -43,6 +44,7 @@ const App = () => {
               element={
                 <>
                   <AppTitle />
+                  <SkipLink />
                   <Header />
                   <Outlet />
                 </>
