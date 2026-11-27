@@ -1,0 +1,27 @@
+.displayFlex {
+  display: flex;
+}
+
+.flexDirectionRow {
+  flex-direction: row;
+}
+
+.justifyContentSpaceBetween {
+  justify-content: space-between;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+.gap2 {
+  gap: 16px;
+}
+
+.marginBottom2 {
+  margin-bottom: 16px;
+}
+
+.padding3 {
+  padding: 24px;
+}

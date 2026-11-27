@@ -16,7 +16,7 @@ export const ArticlePage = () => {
     <MainPage>
       <Breadcrumbs
         breadcrumbs={[
-          { name: "Home", location: "/articles" },
+          { name: "Articles", location: "/articles" },
           { name: article.title },
         ]}
       />
