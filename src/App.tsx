@@ -18,6 +18,8 @@ import {
 } from "common/contexts/SettingsContext";
 import { getThemeClass } from "common/utils/getThemeClass";
 import { SkipLink } from "components/SkipLink";
+import { Playground } from "features/playground/Playground";
+import { PlaygroundExamplePage } from "features/playground/PlaygroundExamplePage";
 
 const App = () => {
   const [settings, setSettings] = useState<SettingsType>(
@@ -53,6 +55,11 @@ const App = () => {
               <Route index element={<Navigate to="articles" />} />
               <Route path="articles" element={<Home />} />
               <Route path="/articles/:articleId" element={<ArticlePage />} />
+              <Route path="playground" element={<Playground />} />
+              <Route
+                path="playground/:exampleId"
+                element={<PlaygroundExamplePage />}
+              />
               <Route path="settings" element={<Settings />} />
             </Route>
           </Routes>

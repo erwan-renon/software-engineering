@@ -6,5 +6,9 @@ type MainPageProps = {
 };
 
 export const MainPage = ({ children }: MainPageProps) => {
-  return <main id="main-content">{children}</main>;
+  return (
+    <main id="main-content">
+      <div className="mainPageWrapper">{children}</div>
+    </main>
+  );
 };

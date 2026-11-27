@@ -1,6 +1,6 @@
 import { Articles } from "articles/Articles";
+import { ListCard } from "components/ListCard";
 import { MainPage } from "components/main-page/MainPage";
-import { HomeArticle } from "features/home-page/articles/HomeArticle";
 
 export const Home = () => {
   return (
@@ -8,7 +8,12 @@ export const Home = () => {
       <h1>Articles</h1>
       <ul className="cardList">
         {Articles.toReversed().map((article) => {
-          return <HomeArticle article={article} />;
+          return (
+            <ListCard
+              document={article}
+              headingHref={`/articles/${article.id}`}
+            />
+          );
         })}
       </ul>
     </MainPage>

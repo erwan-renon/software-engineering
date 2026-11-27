@@ -4,6 +4,7 @@ import { useMatch } from "react-router-dom";
 
 export const Header = () => {
   const matchesArticles = useMatch("/articles/*");
+  const matchesPlayground = useMatch("/playground/*");
   const matchesSettings = useMatch("/settings/*");
 
   return (
@@ -19,6 +20,13 @@ export const Header = () => {
               content="Articles"
               href="/articles"
               isMatch={!!matchesArticles}
+            />
+          </li>
+          <li>
+            <HeaderNavLink
+              content="Playground"
+              href="/playground"
+              isMatch={!!matchesPlayground}
             />
           </li>
           <li>
